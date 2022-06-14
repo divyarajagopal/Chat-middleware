@@ -1,0 +1,20 @@
+# Node
+#
+*-lock.json
+node_modules/
+
+#Distribution
+#
+dist/
+
+#Log
+#
+log/*.log
+
+#Tests
+#
+coverage/
+
+#Cache
+#
+.tscache/

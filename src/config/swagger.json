@@ -1,0 +1,66 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0"
+    },
+    "host": "localhost:4300",
+    "basePath": "/",
+    "schemes": ["http"],
+    "produces": ["application/json"],
+    "paths": {
+        "/ping": {
+            "get": {
+                "tags": ["Ping"],
+                "summary": "Checks the health of the middle server",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": []
+            }
+        },
+        "/graphql": {
+            "post": {
+                "tags": ["GraphQL"],
+                "summary": "Retrieves the graphql query results",
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    },
+                    "400": {
+                        "description": "Bad request"
+                    },
+                    "403": {
+                        "description": "Forbidden"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    }
+                },
+                "content": {
+                    "application/json": {}
+                },
+                "parameters": [{
+                    "name": "query",
+                    "in": "body",
+                    "description": "Specifies the query string",
+                    "required": true,
+                    "type": "string"
+                }]
+            }
+        }
+    }
+}

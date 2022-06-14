@@ -1,0 +1,357 @@
+{
+	"info": {
+		"_postman_id": "1ad98796-3265-41ef-8c1a-1d00eb58c8c0",
+		"name": "Virtual Agent Middle Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GraphQL - Multiple answers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Origin",
+						"value": "http://127.0.0.1:4300"
+					},
+					{
+						"key": "Accept-Encoding",
+						"value": "gzip, deflate, br"
+					},
+					{
+						"key": "Accept-Language",
+						"value": "en-GB,en;q=0.9"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Referer",
+						"value": "http://127.0.0.1:4300/"
+					},
+					{
+						"key": "Connection",
+						"value": "keep-alive"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": \"{\\n  question(text: \\\"Q1\\\") {\\n    text\\n    answers {\\n      text\\n      webSearchUrl\\n    }\\n  }\\n}\\n\",\n    \"variables\": null\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4300/graphql?",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4300",
+					"path": [
+						"graphql"
+					]
+				},
+				"description": "Retreives results for the graphQL queries"
+			},
+			"response": [
+				{
+					"name": "GraphQL - Multiple Answers",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Origin",
+								"value": "http://127.0.0.1:4300"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "gzip, deflate, br"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en-GB,en;q=0.9"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Referer",
+								"value": "http://127.0.0.1:4300/"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": \"{\\n  question(text: \\\"Q1\\\") {\\n    text\\n    answers {\\n      text\\n      webSearchUrl\\n    }\\n  }\\n}\\n\",\n    \"variables\": null\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:4300/graphql?",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "4300",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "http://127.0.0.1:4300"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "191"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"bf-VcnSq9gzPmm5WDcXoFyNGvsQGrc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Apr 2019 20:57:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"question\": {\n            \"text\": \"Q1\",\n            \"answers\": [\n                {\n                    \"text\": \"A1\",\n                    \"webSearchUrl\": \"URL1\"\n                },\n                {\n                    \"text\": \"A2\",\n                    \"webSearchUrl\": \"URL2\"\n                },\n                {\n                    \"text\": \"A3\",\n                    \"webSearchUrl\": \"URL3\"\n                },\n                {\n                    \"text\": \"A4\",\n                    \"webSearchUrl\": \"URL4\"\n                }\n            ]\n        }\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "PING - Success",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4300/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"ping"
+					]
+				},
+				"description": "Checks the health of the middle server"
+			},
+			"response": [
+				{
+					"name": "PING - Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:4300/ping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4300",
+							"path": [
+								"ping"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-0tz3AkzfLDd6AoNLwf2zzZusxxU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Apr 2019 20:59:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"result\": \"success\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "PING - Wrong URL",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4300/ping1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4300",
+					"path": [
+						"ping1"
+					]
+				},
+				"description": "Checks the health of the middle server"
+			},
+			"response": [
+				{
+					"name": "PING - Wrong URL",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:4300/ping1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4300",
+							"path": [
+								"ping1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "17"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"11-HCT8a3tix9mosn5xLfr4OHZvxGw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Apr 2019 21:06:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Method not found."
+				}
+			]
+		}
+	]
+}
